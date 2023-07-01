@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="DevCStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="Image/Pixel_Dungeon_logo.png">
+    <title>Dev-C++</title>
+</head>
+
+<body>
+    <div class="center">
+        <img id="main-logo" src="Image/vanilla.gif" width="600" height="600">
+        <div class="fancy-box">
+            
+<a class="box-title">Welcome to Book Store</a>
+<pre class="box-text">
+โปรแกรมนี้เป็นโปรแกรมที่ใช้สำหรับแสดงผลข้อมูลต่างๆ
+
+ไลบรารี (Library) ที่ใช้งาน: stdio.h และ stdlib.h
+
+ตัวแปรที่ใช้งาน:
+
+1. Class: ตัวแปรชนิด char เพื่อเก็บค่าระดับชั้นของหนังสือ (เช่น 'C' หรืออื่น ๆ)
+2. name: อาร์เรย์ของ char เพื่อเก็บชื่อของโปรแกรมหนังสือ (สตริง) ที่มีขนาด 20 ตัวอักษร
+3. amount_book: ตัวแปรชนิด int เพื่อเก็บจำนวนหนังสือที่มีในร้าน
+4. price_book: ตัวแปรชนิด float เพื่อเก็บราคาหนังสือต่อเล่ม
+
+โค้ดที่ใช้งาน:
+
+1. printf(): ฟังก์ชันสำหรับแสดงผลข้อความหรือค่าตัวแปรในหน้าจอคอนโซล
+2. system("pause"): ฟังก์ชันสำหรับหยุดรันโปรแกรมและรอให้ผู้ใช้กดปุ่มใด ๆ เพื่อปิดหน้าต่างโปรแกรม</pre>
+<pre class="code_box">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    char Class = 'C', name[20] = "Program";
+    int amount_book = 1001;
+    float price_book = 170.50;
+    printf("Welcome to BookStore\n");
+    printf("%s %c Have %d book\n", name, Class, amount_book);
+    printf("%s %c Is %.2f baht per book\n", name, Class, price_book);
+    system("pause");
+    return 0;
+}</pre>
+
+            <span class="box-footer">
+                <a href="DevC++.html" class="box-tag">30/06/2023 Post</a>
+            </span>
+            <div class="article-footer"><a href="DevC.html" class="box-tag"><div class="soft-flow" style="padding:10px;border:1px solid;border-radius:2px;">More Articles</div></a></div>
+        </div>
+    </div>
+    <div class="footer">
+        <a class="footer-link" href="https://github.com/vanillauwuz"><i class="fa-brands fa-github"></i> GitHub</a> -
+        <a class="footer-link" href="https://github.com/vanillauwuz"><i class="fa-brands fa-spotify"></i> Spotify</a> -
+        <a class="footer-link" href="Home.html"><i class="fa-solid fa-house"></i> Home</a>
+    </div>
+</body>
+
+</html>
