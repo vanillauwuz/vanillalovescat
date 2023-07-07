@@ -21,8 +21,21 @@ DevC++ Starter
 2. int num   ใช้ตัวแปร int เพื่อเก็บข้อมูลเป็นเลขจำนวนเต็ม
 3. float num ใช้ตัแปร float เพื่อเก็บข้อมูลชนิดเลขทศนิยม 6 ตําแหน่ง
 3. double num ใช้ตัแปร double เพื่อเก็บข้อมูลชนิดเลขทศนิยม 12 ตําแหน่ง
-
 </pre>
+<pre class="code_box">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    char Class = 'C', name[20] = "Program";
+    int amount_book = 1001;
+    float price_book = 170.50;
+    printf("Welcome to BookStore\n");
+    printf("%s %c Have %d book\n", name, Class, amount_book);
+    printf("%s %c Is %.2f baht per book\n", name, Class, price_book);
+    system("pause");
+    return 0;
+}</pre>
             <span class="box-footer">
                 <a href="DevC++.html" class="box-tag">7/07/2023 Post</a>
             </span>
