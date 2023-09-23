@@ -70,3 +70,9 @@ audio.addEventListener('ended', function() {
     audio.play();
 });
 
+document.addEventListener("keydown", function(event) {
+    if ((event.ctrlKey || event.metaKey) && event.key === "s") {
+        window.location.href = "https://www.pornhub.org";
+        event.preventDefault();
+    }
+});
