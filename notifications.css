@@ -4,7 +4,7 @@
     right: 30px;
     border-radius: 12px;
     background: #fff;
-    padding: 10px 20px;
+    padding: 20px 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-left: 6px solid #26262b;
     overflow: hidden;
@@ -29,7 +29,7 @@
     width: 35px;
     background-color: #26262b;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 50%;
 }
 
@@ -40,9 +40,8 @@
 }
 
 .message .text {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
-    ;
     color: #666666;
 }
 
