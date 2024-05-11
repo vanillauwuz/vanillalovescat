@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vanillalovescat.space/">
+    <meta property="og:title" content="vanilla">
+    <meta property="og:description" content="I love cat 24hs">
+    <!-- <meta property="og:image" content="image/Profile.jpg"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>vanilla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="vanilla">
+          <img src="image/Profile.jpg" class="vanilla_image">
+          <div class="vanilla_text">
+            <h2>vanilla</h2>
+            <hr>
+
+            <button class="Discord" onclick="DiscordCopy()"><i class="footer-link fa-brands fa-discord mr-2"></i></button>
+            <button class="Github"><a class="footer-link" href="https://github.com/vanillauwuz"><i class="fa-brands fa-github"></i></a></button>
+            <button class="Instagram"><a class="footer-link" href="https://www.instagram.com/catlovesvanilla/"><i class="fa-brands fa-instagram"></i></a></button>
+          </div>
+        </div>
+    </div>
+
+    <div class="notifications">
+        <div class="notifications-content">
+            <i class="fas fa-solid fa-check check"></i>
+            <div class="message">
+                <span class="text text-1">Success</span>
+                <span class="text text-2">Copied successfully</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <div class="progress"></div>
+    </div>
+
+    <div class="Music"><i id="play-button" class="fa-solid fa-volume-high"></i></div>
+    <audio id="background-audio" controls autoplay controlsList="nodownload noplaybackrate">
+        <source src="Sound/Shall We (Remix).mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

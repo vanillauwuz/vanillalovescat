@@ -1,0 +1,189 @@
+local Notify = {
+    Name = "IG vanillalovescat",
+    Notification = "VANILLA NOTIFICATION",
+    Notifications = true,
+}
+
+local function randomString()
+    local randomlength = math.random(10,100)
+    local array = {}
+
+    for i = 1, randomlength do
+        array[i] = string.char(math.random(32, 126))
+    end
+
+    return table.concat(array)
+end
+
+if not game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("IG vanillalovescat") then
+    local gui = Instance.new("ScreenGui")
+    gui.Name = Notify.Name
+    gui.DisplayOrder = 999
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+    gui.OnTopOfCoreBlur = true
+    gui.ResetOnSpawn = false
+    gui.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+end
+Notify.MainGui = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("IG vanillalovescat")
+if not game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("IG vanillalovescat"):FindFirstChild("VANILLA NOTIFICATION") then
+    local notificationwindow = Instance.new("Frame")
+    notificationwindow.Name = Notify.Notification
+    notificationwindow.BackgroundTransparency = 1
+    notificationwindow.Active = false
+    notificationwindow.Size = UDim2.new(1, 0, 1, 0)
+    notificationwindow.Parent = Notify.MainGui
+end
+Notify.NotificationWindow = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("IG vanillalovescat"):FindFirstChild("VANILLA NOTIFICATION")
+local function bettertween(obj, newpos, dir, style, tim, override)
+    task.spawn(function()
+        local frame = Instance.new("Frame")
+        frame.Visible = false
+        frame.Position = obj.Position
+        frame.Parent = Notify.MainGui
+        frame:GetPropertyChangedSignal("Position"):Connect(function()
+            obj.Position = UDim2.new(obj.Position.X.Scale, obj.Position.X.Offset, frame.Position.Y.Scale, frame.Position.Y.Offset)
+        end)
+        pcall(function()
+            frame:TweenPosition(newpos, dir, style, tim, override)
+        end)
+        frame.Parent = nil
+        task.wait(tim)
+        frame:Remove()
+    end)
+end
+
+local function bettertween2(obj, newpos, dir, style, tim, override)
+    task.spawn(function()
+        local frame = Instance.new("Frame")
+        frame.Visible = false
+        frame.Position = obj.Position
+        frame.Parent = Notify.MainGui
+        frame:GetPropertyChangedSignal("Position"):Connect(function()
+            obj.Position = UDim2.new(frame.Position.X.Scale, frame.Position.X.Offset, obj.Position.Y.Scale, obj.Position.Y.Offset)
+        end)
+        pcall(function()
+            frame:TweenPosition(newpos, dir, style, tim, override)
+        end)
+        frame.Parent = nil
+        task.wait(tim)
+        frame:Remove()
+    end)
+end
+
+Notify.NotificationWindow.ChildRemoved:Connect(function()
+    for i,v in pairs(Notify.NotificationWindow:GetChildren()) do
+        bettertween(v, UDim2.new(1, v.Position.X.Offset, 1, -(150 + 80 * (i - 1))), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.15, true)
+    end
+end)
+
+local function removeTags(str)
+    str = str:gsub("<br%s*/>", "\n")
+    return (str:gsub("<[^<>]->", ""))
+end
+
+Notify.CreateNotification = function(top, bottom, duration, customicon)
+    local size = math.max(game:GetService("TextService"):GetTextSize(removeTags(bottom), 13, Enum.Font.Gotham, Vector2.new(99999, 99999)).X + 60, 266)
+	local offset = #Notify.NotificationWindow:GetChildren()
+
+	local frame = Instance.new("Frame")
+    frame.Name = randomString()
+	frame.Size = UDim2.new(0, size, 0, 75)
+	frame.Position = UDim2.new(1, 0, 1, -(150 + 80 * offset))
+	frame.BackgroundTransparency = 1
+	frame.BackgroundColor3 = Color3.new(0, 0,0)
+	frame.BorderSizePixel = 0
+	frame.Parent = Notify.NotificationWindow
+	frame.Visible = Notify.Notifications
+	frame.ClipsDescendants = false
+
+	local image = Instance.new("ImageLabel")
+	image.SliceCenter = Rect.new(67, 59, 323, 120)
+	image.Position = UDim2.new(0, -61, 0, -50)
+	image.BackgroundTransparency = 1
+	image.Name = "Frame"
+	image.ScaleType = Enum.ScaleType.Slice
+	image.Image = "rbxassetid://13350776706"
+	image.Size = UDim2.new(1, 61, 0, 159)
+	image.Parent = frame
+
+	local uicorner = Instance.new("UICorner")
+	uicorner.CornerRadius = UDim.new(0, 6)
+	uicorner.Parent = frame
+
+	local frame2 = Instance.new("ImageLabel")
+	frame2.BackgroundColor3 = Color3.new(1, 1, 1)
+	frame2.Name = "Frame"
+	frame2:GetPropertyChangedSignal("BackgroundColor3"):Connect(function()
+		frame2.ImageColor3 = frame2.BackgroundColor3
+	end)
+	frame2.BackgroundTransparency = 1
+	frame2.SliceCenter = Rect.new(2, 0, 224, 2)
+	frame2.Size = UDim2.new(1, -61, 0, 2)
+	frame2.ScaleType = Enum.ScaleType.Slice
+	frame2.Position = UDim2.new(0, 63, 1, -36)
+	frame2.ZIndex = 2
+	frame2.Image = "rbxassetid://13350777235"
+	frame2.BorderSizePixel = 0
+	frame2.Parent = image
+
+	local icon = Instance.new("ImageLabel")
+	icon.Name = "IconLabel"
+	icon.Image = (customicon or "rbxassetid://13350774006")
+	icon.BackgroundTransparency = 1
+	icon.Position = UDim2.new(0, -6, 0, -6)
+	icon.Size = UDim2.new(0, 60, 0, 60)
+	icon.Parent = frame
+
+	local icon2 = icon:Clone()
+	icon2.ImageColor3 = Color3.new(0, 0, 0)
+	icon2.ZIndex = -1
+	icon2.Position = UDim2.new(0, 1, 0, 1)
+	icon2.ImageTransparency = 0.5
+	icon2.Parent = icon
+
+	local textlabel1 = Instance.new("TextLabel")
+	textlabel1.Font = Enum.Font.Arial
+	textlabel1.TextSize = 14
+	textlabel1.RichText = true
+	textlabel1.TextTransparency = 0.1
+	textlabel1.TextColor3 = Color3.new(1, 1, 1)
+	textlabel1.BackgroundTransparency = 1
+	textlabel1.Position = UDim2.new(0, 46, 0, 17)
+	textlabel1.TextXAlignment = Enum.TextXAlignment.Left
+	textlabel1.TextYAlignment = Enum.TextYAlignment.Top
+	textlabel1.Text = top
+	textlabel1.Parent = frame
+
+	local textlabel2 = textlabel1:Clone()
+	textlabel2.Position = UDim2.new(0, 46, 0, 44)
+	textlabel2.Font = Enum.Font.Arial
+	textlabel2.TextTransparency = 0
+	textlabel2.TextColor3 = Color3.fromRGB(170, 170, 170)
+	textlabel2.RichText = true
+	textlabel2.Text = bottom
+	textlabel2.Parent = frame
+
+	task.spawn(function()
+		pcall(function()
+			bettertween2(frame, UDim2.new(1, -(size - 4), 1, -(150 + 80 * offset)), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.15, true)
+			task.wait(0.15)
+			frame2:TweenSize(UDim2.new(0, 0, 0, 2), Enum.EasingDirection.In, Enum.EasingStyle.Linear, duration, true)
+			task.wait(duration)
+			bettertween2(frame, UDim2.new(1, 0, 1, frame.Position.Y.Offset), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.15, true)
+			task.wait(0.15)
+			frame:Remove()
+		end)
+	end)
+
+	return frame
+end
+
+Notify.CreateWarning = function(title, text, delay)
+	pcall(function()
+		local frame = Notify.CreateNotification(title, text, delay, "rbxassetid://13350794868")
+		frame.Frame.BackgroundColor3 = Color3.fromRGB(236, 129, 44)
+		frame.Frame.Frame.BackgroundColor3 = Color3.fromRGB(236, 129, 44)
+	end)
+end
+
+return Notify
