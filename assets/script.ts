@@ -25,6 +25,10 @@ function loop() {
 window.onload = () => {
     document.title = text[0];
     setInterval(loop, 300);
+
+    document.addEventListener('click', () => {
+        (document.getElementById("bg-audio") as HTMLAudioElement).play();
+    });
 };
 
 function overlayblock(): void {
