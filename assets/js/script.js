@@ -34,6 +34,10 @@ function loop() {
 window.onload = () => {
     document.title = text[0];
     setInterval(loop, 300);
+
+    document.addEventListener('click', () => {
+        document.getElementById("bg-audio").play();
+    });
 };
 function overlayblock() {
     document.getElementById("overlay").style.display = "none";
