@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'SLKSCR';
+    src: url('slkscr.woff2') format('woff2'),
+        url('slkscr.woff') format('woff'),
+        url('/assets/fonts/slkscr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 600px) {
+    .background {
+        width: 100%;
+        height: auto;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'SLKSCR', sans-serif;
+    overflow: hidden;
+    animation: loadingIn 0.75s;
+}
+
+.vanilla {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.vanvan {
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0px 30px 0px 30px;
+}
+
+.background {
+    height: 550px;
+    opacity: 0.3;
+    position: absolute;
+    z-index: -1;
+}
+
+.comment {
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 5px;
+    padding: 20px 150px 30px 30px;
+    position: relative;
+}
+
+.card {
+    text-align: justify;
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    border-radius: 100%;
+    height: 50px;
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+h4,
+span {
+    display: inline;
+    margin: 0;
+}
+
+h4 {
+    padding: 0px 5px 0px 10px;
+}
+
+span {
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 1.3em;
+    padding-top: 5px;
+}
+
+a,
+a.discord,
+a.instagram,
+a.facebook {
+    color: white;
+    text-decoration: none;
+    transition-duration: 300ms;
+}
+
+i.discord,
+i.instagram,
+i.facebook {
+    color: white;
+    padding: 5px;
+    opacity: 0.1;
+    transition-duration: 300ms;
+}
+
+a.discord:hover,
+i.discord:hover {
+    color: rgb(88, 101, 242);
+    opacity: 1;
+}
+
+a.facebook:hover,
+i.facebook:hover {
+    color: rgb(66, 103, 178);
+    opacity: 1;
+}
+
+a.instagram:hover,
+i.instagram:hover {
+    color: #f09433;
+    /* Fallback for older browsers */
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+}
+
+.vanillaback {
+    position: absolute;
+    bottom: 270px;
+    transform: translateY(-50%);
+}
+
+.vanillaback i {
+    color: white;
+    transition-duration: 300ms;
+}
+
+.vanillaback i:hover {
+    opacity: 0.3;
+}
+
+@keyframes loadingIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.ri {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+p:hover .ri {
+    opacity: 1;
+}
