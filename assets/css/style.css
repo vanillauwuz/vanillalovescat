@@ -162,11 +162,16 @@ p:hover .ri {
 }
 
 @media only screen and (max-width: 600px) {
+    .background {
+        width: 100%;
+        object-fit: cover;
+    }
     .comment {
+
         padding: 30px 70px 20px 30px;
     }
     .vanillaback {
-        padding-top: 55vh;
+        padding-top: 70vh;
     }
     h1 {
         font-size: 1.1em;
