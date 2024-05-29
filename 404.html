@@ -1,34 +1,15 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 | Not Founnd</title>
-    <link href="./assets/image/kuromi.png" rel="icon" type="image/x-icon">
-    <link href="./assets/css/style.css" rel="stylesheet">
-</head>
-<body class="text-white bg-black bg-gradient-to-r from-zinc-900/50 to-zinc-700/30">
-    <div class="h-screen flex items-center justify-center">
-        <div class="border-r-[1px] inline-block px-2 animate-blink">
-            <h1 class="text-xl font-mono font-bold" id="404"></h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>404 | Not Founnd</title>
+        <link href="./assets/image/kuromi.png" rel="icon" type="image/x-icon">
+        <link href="./assets/css/style.css" rel="stylesheet">
+    </head>
+    <body style="background-color: black; color: white;">
+        <div style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+            <h1 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" id="404">404 | Not Found</h1>
         </div>
-    </div>
-    <script>
-        var text = "404 | Not Found";
-        var pos = 1;
-            
-        function loop() {
-            var element = document.getElementById("404");
-            if (pos < text.length) {
-                element.innerHTML = text.substring(0, pos + 1);
-                pos++;
-            } 
-        }
-        
-        window.onload = () => {
-            document.getElementById("404").innerHTML = text[0];
-            setInterval(loop, 300);
-        };
-    </script>
-</body>
-</html> -->
+    </body>
+</html>
