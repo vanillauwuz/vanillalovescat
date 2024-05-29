@@ -172,7 +172,16 @@ p:hover .ri {
     }
     .vanillaback {
         padding-top: 70vh;
-        padding-top: calc(var(--vh, 1vh) * 50);
+    }
+
+    @supports (-webkit-touch-callout: none) {
+        .vanillaback {
+            padding-top: calc(var(--vh, 1vh) * 70);
+        }
+    }
+
+    :root {
+        --vh: 1vh;
     }
     h1 {
         font-size: 1.1em;
