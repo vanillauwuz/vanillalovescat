@@ -179,10 +179,6 @@ p:hover .ri {
             padding-top: calc(var(--vh, 1vh) * 70);
         }
     }
-
-    :root {
-        --vh: 1vh;
-    }
     h1 {
         font-size: 1.1em;
     }
