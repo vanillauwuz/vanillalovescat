@@ -126,12 +126,13 @@ i.instagram:hover {
 
 .vanillaback {
     position: absolute;
+    padding-top: 40vh;
     text-align: center;
 }
 
 .vanillaback i {
     color: white;
-    padding-top: 40vh;
+    
     transition-duration: 300ms;
 }
 
@@ -167,9 +168,6 @@ p:hover .ri {
     }
     .comment {
         padding: 30px 70px 20px 30px;
-    }
-    .vanillaback i {
-        padding-top: 10vh;
     }
     h1 {
         font-size: 1.1em;
