@@ -126,9 +126,8 @@ i.instagram:hover {
 
 .vanillaback {
     position: absolute;
-    z-index: 999;
     padding-top: 40vh;
-    left: 50%;
+    text-align: center;
 }
 
 .vanillaback i {
