@@ -168,7 +168,9 @@ p:hover .ri {
     .comment {
         padding: 30px 70px 20px 30px;
     }
-
+    .vanillaback i {
+        padding-top: 60vh;
+    }
     h1 {
         font-size: 1.1em;
     }
