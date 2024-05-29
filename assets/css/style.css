@@ -127,8 +127,13 @@ i.instagram:hover {
 
 .vanillaback {
     position: absolute;
-    padding-top: 40vh;
+    top: 30vh;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    z-index: 999;
 }
 
 .vanillaback i {
@@ -168,9 +173,6 @@ p:hover .ri {
     }
     .comment {
         padding: 30px 70px 20px 30px;
-    }
-    .vanillaback {
-        padding-top: 20vh;
     }
     h1 {
         font-size: 1.1em;
