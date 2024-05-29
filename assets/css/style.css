@@ -172,6 +172,7 @@ p:hover .ri {
     }
     .vanillaback {
         padding-top: 50vh;
+        padding-top: calc(var(--vh, 1vh) * 50);
     }
     h1 {
         font-size: 1.1em;
